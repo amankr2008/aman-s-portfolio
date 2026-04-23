@@ -57,16 +57,41 @@ Message: ${message}`
 /* ================= AI CHATBOT ================= */
 app.post("/chat", (req, res) => {
   let msg = req.body.message.toLowerCase();
+
   let reply = "Samajh nahi aaya 😅";
 
-  if (msg.includes("hello")) reply = "Hello 👋";
-  else if (msg.includes("hi")) reply = "Hi 😊";
-  else if (msg.includes("portfolio")) reply = "Ye Aman ka portfolio hai 😎";
-  else if (msg.includes("contact")) reply = "Contact form fill karo 👍";
+  // greetings
+  if (msg.includes("hello") || msg.includes("hi")) {
+    reply = "Hello 👋 Kaise help karu aapki?";
+  }
+
+  // website related
+  else if (msg.includes("website")) {
+    reply = "Haan 👍 main aapke liye website bana sakta hoon.\nAapko kis type ki website chahiye? (portfolio, business, e-commerce)";
+  }
+
+  // need website
+  else if (msg.includes("need a website") || msg.includes("i need website")) {
+    reply = "Great 🔥 Main aapke liye professional website bana dunga.\nPlease batao kis type ki website chahiye?";
+  }
+
+  // portfolio
+  else if (msg.includes("portfolio")) {
+    reply = "Portfolio website aapko personal branding ke liye best hai 😎";
+  }
+
+  // contact
+  else if (msg.includes("contact")) {
+    reply = "Aap contact form fill kar sakte ho ya direct email kar sakte ho 👍";
+  }
+
+  // price
+  else if (msg.includes("price") || msg.includes("cost")) {
+    reply = "Website ka cost depend karta hai features pe 💰\nBasic website ₹2000-₹5000 me ban jati hai.";
+  }
 
   res.json({ reply });
 });
-
 /* ================= START SERVER ================= */
 app.listen(5000, () => {
   console.log("Server running on http://localhost:5000 🚀");
