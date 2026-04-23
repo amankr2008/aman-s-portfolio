@@ -1326,10 +1326,10 @@ form .button-area {
 }
 
 /* ===== ONLY MOBILE FIX ===== */
-@media (max-width: 600px) {
+@media (max-width: 500px) {
 
   html {
-    font-size: 50%;
+    font-size: 30%;
   }
 
   /* HOME FIX */
@@ -1339,7 +1339,7 @@ form .button-area {
   }
 
   .home .image img {
-    width: 90%;
+    width: 70%;
     margin: 0 auto;
   }
 
@@ -1348,12 +1348,12 @@ form .button-area {
   }
 
   .home .content p {
-    font-size: 1.6rem;
+    font-size: 1rem;
   }
 
   /* SKILLS FIX */
   .skills .container .row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
   /* ABOUT FIX */
@@ -1368,12 +1368,12 @@ form .button-area {
   }
 
   .contact .content form {
-    width: 100%;
+    width: 60%;
   }
 
   /* CHATBOT FIX */
   #chatbot {
-    width: 90%;
+    width: 70%;
     right: 5%;
   }
 }
