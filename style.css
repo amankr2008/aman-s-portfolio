@@ -1241,3 +1241,86 @@ form .button-area {
   padding: 6px 8px;
   width: 100px;
 }
+
+/* CHAT ICON */
+#chat-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #2506ad;
+  color: #fff;
+  font-size: 24px;
+  padding: 12px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+/* CHAT BOX */
+#chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 280px;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+
+.hide {
+  display: none;
+}
+
+#chat-header {
+  background: #2506ad;
+  color: white;
+  padding: 10px;
+}
+
+/* CHAT AREA */
+#chat-box {
+  height: 250px;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-msg {
+  background: #2506ad;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin: 5px 0;
+  align-self: flex-end;
+  max-width: 70%;
+}
+
+.bot-msg {
+  background: #eee;
+  padding: 8px 12px;
+  border-radius: 15px;
+  margin: 5px 0;
+  align-self: flex-start;
+  max-width: 70%;
+}
+
+#chat-input-area {
+  display: flex;
+}
+
+#user-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+}
+
+#chat-input-area button {
+  background: #2506ad;
+  color: white;
+  border: none;
+  padding: 10px;
+}

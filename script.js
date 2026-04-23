@@ -1,5 +1,9 @@
 $(document).ready(function () {
-
+document.getElementById("user-input").addEventListener("keypress", function(e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -201,4 +205,85 @@ srtop.reveal('.contact .container .form-group', { delay: 400 });
 VanillaTilt.init(document.querySelectorAll(".tilt"), {
   max: 15,
   glare: false
+});
+
+async function sendChat() {
+  let msg = document.getElementById("chatInput").value;
+
+  let res = await fetch("http://localhost:5000/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ message: msg })
+  });
+
+  let data = await res.json();
+
+  document.getElementById("chatBox").innerHTML +=
+    "<p><b>You:</b> " + msg + "</p>" +
+    "<p><b>Bot:</b> " + data.reply + "</p>";
+}
+
+function toggleChat() {
+  document.getElementById("chatbot").classList.toggle("hide");
+}
+
+async function sendMessage() {
+  let input = document.getElementById("user-input");
+  let chatBox = document.getElementById("chat-box");
+
+  let userText = input.value.trim();
+  if (!userText) return;
+
+  let userMsg = document.createElement("div");
+  userMsg.className = "user-msg";
+  userMsg.innerText = userText;
+  chatBox.appendChild(userMsg);
+
+  input.value = "";
+
+  let res = await fetch("http://localhost:5000/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ message: userText })
+  });
+
+  let data = await res.json();
+
+  let botMsg = document.createElement("div");
+  botMsg.className = "bot-msg";
+  botMsg.innerText = data.reply;
+  chatBox.appendChild(botMsg);
+
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+/* ENTER KEY SEND */
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("user-input").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  let chatBox = document.getElementById("chat-box");
+
+  // BOT ka pehla message
+  let botMsg = document.createElement("div");
+  botMsg.className = "bot-msg";
+  botMsg.innerText = "Hello 👋\nMain Aman ka AI Chatbot hoon.\nHello 👋 Welcome to my website! How can I help you?";
+  
+  chatBox.appendChild(botMsg);
+
+  // Enter key send
+  document.getElementById("user-input").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+      sendMessage();
+    }
+  });
 });
