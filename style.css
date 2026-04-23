@@ -1329,7 +1329,7 @@ form .button-area {
 @media (max-width: 500px) {
 
   html {
-    font-size: 60%;
+    font-size: 70%;
   }
 
   /* HOME FIX */
@@ -1344,7 +1344,7 @@ form .button-area {
   }
 
   .home .content h2 {
-    font-size: 3rem;
+    font-size: 5rem;
   }
 
   .home .content p {
