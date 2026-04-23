@@ -481,9 +481,9 @@ header .navbar ul li a:hover {
 }
 .skills .container .row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.8rem;
 }
 .skills .container .bar {
   margin-bottom: 15px;
@@ -1323,4 +1323,57 @@ form .button-area {
   color: white;
   border: none;
   padding: 10px;
+}
+
+/* ===== ONLY MOBILE FIX ===== */
+@media (max-width: 600px) {
+
+  html {
+    font-size: 50%;
+  }
+
+  /* HOME FIX */
+  .home {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home .image img {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .home .content h2 {
+    font-size: 3rem;
+  }
+
+  .home .content p {
+    font-size: 1.6rem;
+  }
+
+  /* SKILLS FIX */
+  .skills .container .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* ABOUT FIX */
+  .about .row {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  /* CONTACT FIX */
+  .contact .container {
+    margin: 1rem;
+  }
+
+  .contact .content form {
+    width: 100%;
+  }
+
+  /* CHATBOT FIX */
+  #chatbot {
+    width: 90%;
+    right: 5%;
+  }
 }
