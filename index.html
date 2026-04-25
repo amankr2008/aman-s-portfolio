@@ -430,23 +430,23 @@
 
 <script src="script.js"></script>
 
-<!-- AI CHATBOT -->
-<!-- CHAT ICON -->
-<div id="chat-toggle" onclick="toggleChat()">💬</div>
+!-- 💬 CHATBOT START -->
+<div id="chat-toggle">💬</div>
 
-<!-- CHAT BOX -->
-<div id="chatbot" class="hide">
-  <div id="chat-header">
-    AI Chatbot 🤖
-    <span onclick="toggleChat()" style="float:right;cursor:pointer;">✖</span>
+<div id="chat-container">
+  <div id="chat-box">
+    <p><b>Bot:</b> Hello 👋 Welcome!</p>
   </div>
 
-  <div id="chat-box"></div>
-
-  <div id="chat-input-area">
-    <input type="text" id="user-input" placeholder="Type message...">
+  <div class="input-area">
+    <input type="text" id="user-input" placeholder="Type message..." />
     <button onclick="sendMessage()">➤</button>
   </div>
+</div>
+
+<link rel="stylesheet" href="chatbot.css">
+<script src="chatbot.js"></script>
+<!-- 💬 CHATBOT END -->
 </div>
 </body>
 </html>
